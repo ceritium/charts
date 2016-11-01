@@ -1,0 +1,4 @@
+%h1 #{@query.name}
+
+%pre
+  = raw pp(@query.preview(params).to_json)

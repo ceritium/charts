@@ -1,0 +1,4 @@
+.pull-right
+  = link_to 'delete', source_query_path(@source, @query), method: :delete, confirm: 'Are you sure?', class: 'btn btn-danger'
+%h2 Edit query
+= react_component("QueryEditorApp", props: {query: @query.attributes, sourcePath: source_path(@source), formPath: source_query_path(@source, @query)}, prerender: false)

@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    %title Charts
+    = csrf_meta_tags
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/latest/css/bootstrap.min.css", :rel => "stylesheet"}/
+  %body
+    %nav.navbar.navbar-inverse
+      .container
+        .navbar-header
+          %button.navbar-toggle.collapsed{"aria-controls" => "navbar", "aria-expanded" => "false", "data-target" => "#navbar", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{href: root_path} Charts
+        #navbar.collapse.navbar-collapse
+          %ul.nav.navbar-nav
+            %li.active
+              %a{href: sources_path} Sources
+    .container
+      = yield
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'

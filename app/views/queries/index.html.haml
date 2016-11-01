@@ -1,0 +1,13 @@
+%h1 Queries
+
+%table.table
+  %thead
+    %th Name
+    %th SQL
+  %tbody
+    - @queries.each do |query|
+      %tr
+        %td= link_to query.name, edit_source_query_path(@source, query)
+        %td= query.sql
+
+= link_to 'New query', new_source_query_path(@source)

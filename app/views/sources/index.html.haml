@@ -1,0 +1,19 @@
+%h1 Sources
+= link_to 'new source', new_source_path
+
+%table.table
+  %thead
+    %tr
+      %th Name
+      %th Actions
+
+  %tbody
+    - @sources.each do |source|
+      %tr
+        %td= link_to source.name, source_queries_path(source)
+        %td
+          = link_to 'edit', edit_source_path(source)
+          = link_to 'destroy', source_path(source), method: :delete
+
+
+= paginate @sources
